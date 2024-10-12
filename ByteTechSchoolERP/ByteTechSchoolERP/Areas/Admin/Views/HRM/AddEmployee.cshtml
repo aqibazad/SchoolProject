@@ -1,0 +1,241 @@
+﻿
+<div class="page-wrapper">
+    <div class="row container">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 95%;">
+                <strong>Human Resource </strong> |
+                <i class="fas fa-home home-icon"></i> - Add Employee
+            </div>
+        </div>
+        </br>
+        <div class="container">
+            <div class="container mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="needs-validation" method="post">
+                            <input type="hidden" name="ci_csrf_token" value="" />
+
+                            <!-- Personal Information -->
+                            <div>
+                                <h5 class="mb-3">Personal Information</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="local-forms label">
+                                            <label for="employee_id" class="form-label" id="label-color">Staff ID <span class="text-danger">*</span></label>
+                                            <input autofocus name="employee_id" type="text" class="form-control" required readonly value="@Guid.NewGuid()">
+                                            <div class="invalid-feedback">
+                                                Please provide a valid staff ID.
+                                            </div>
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="name" class="form-label" id="label-color">First Name <span class="text-danger">*</span></label>
+                                            <input name="name" type="text" class="form-control" required>
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="father_name" class="form-label" id="label-color">Father Name</label>
+                                            <input name="father_name" type="text" class="form-control">
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="designation" class="form-label" id="label-color">Designation</label>
+                                            <select name="designation" class="form-control">
+                                                <option value="">Select Designation</option>
+                                                <option value="1">Faculty</option>
+                                                <option value="2">Accountant</option>
+                                                <option value="3">Admin</option>
+                                                <option value="4">Receptionist</option>
+                                                <option value="5">Principal</option>
+                                                <option value="6">Director</option>
+                                                <option value="7">Librarian</option>
+                                                <option value="8">Technical Head</option>
+                                                <option value="9">Vice Principal</option>
+                                            </select>
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="dob" class="form-label" id="label-color">Date of Birth <span class="text-danger">*</span></label>
+                                            <input name="dob" type="date" class="form-control" required>
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="date_of_joining" class="form-label" id="label-color">Date Of Joining</label>
+                                            <input name="date_of_joining" type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="local-forms label">
+                                            <label for="role" class="form-label" id="label-color">Role <span class="text-danger">*</span></label>
+                                            <select name="role" class="form-control" required>
+                                                <option value="">Select Role</option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Teacher</option>
+                                                <option value="3">Accountant</option>
+                                                <option value="4">Librarian</option>
+                                                <option value="6">Receptionist</option>
+                                                <option value="7">Super Admin</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a role.
+                                            </div>
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="surname" class="form-label" id="label-color">Last Name</label>
+                                            <input name="surname" type="text" class="form-control">
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="gender" class="form-label" id="label-color">Gender <span class="text-danger">*</span></label>
+                                            <select name="gender" class="form-control" required>
+                                                <option value="">Select Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="local-forms label">
+                                            <label for="department" class="form-label" id="label-color">Department</label>
+                                            <select name="department" class="form-control">
+                                                <option value="">Select Department</option>
+                                                @foreach (var department in ViewBag.department)
+                                                {
+                                                    <option value="@department">@department</option>
+                                                }
+                                            </select>
+                                        </div>
+
+
+                                        <div class="local-forms label">
+                                            <label for="email" class="form-label" id="label-color">Email (Login Username) <span class="text-danger">*</span></label>
+                                            <input name="email" type="email" class="form-control" required>
+                                        </div>
+
+
+                                        <div class="local-forms label">
+                                            <label for="password" class="form-label" id="label-color">Password</label>
+                                            <input name="password" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div>
+                                <h5 class="mb-3">Contact Information</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="contactno" class="form-label" id="label-color">Phone</label>
+                                            <input name="contactno" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="emergency_no" class="form-label" id="label-color">Emergency Contact Number</label>
+                                            <input name="emergency_no" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="marital_status" class="form-label" id="label-color">Marital Status</label>
+                                            <select name="marital_status" class="form-control">
+                                                <option value="">Select Status</option>
+                                                <option value="Single">Single</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Widowed">Widowed</option>
+                                                <option value="Separated">Separated</option>
+                                                <option value="Not Specified">Not Specified</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div>
+                                <h5 class="mb-3">Additional Information</h5>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="address" class="form-label" id="label-color">Address</label>
+                                            <textarea name="address" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="permanent_address" class="form-label" id="label-color">Permanent Address</label>
+                                            <textarea name="permanent_address" class="form-control"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="note" class="form-label" id="label-color">Note</label>
+                                            <textarea name="note" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="note" class="form-label" id="label-color">Qualification</label>
+                                            <input type="text" name="pan_number" class="form-control" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="note" class="form-label" id="label-color">Work Experiance</label>
+                                            <input type="text" name="pan_number" class="form-control" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="local-forms label">
+                                            <label for="note" class="form-label" id="label-color">PAN NO.</label>
+                                            <input type="text" name="pan_number" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Please provide PAN Number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <!-- PAN Number -->
+                            <div>
+
+                                <div class="local-forms label col-md-4">
+                                    <label class="form-label" id="label-color">Upload Photo*</label>
+                                    <input type="file" name="fileToUpload" class="form-control" />
+                                </div>
+                                <div class="local-forms label col-md-4">
+                                    <label class="form-label" id="label-color">Upload Resume*</label>
+                                    <input type="file" name="fileToUpload" class="form-control" />
+                                </div>
+                            </div>
+
+                            <!-- Photo -->
+                            <!-- Submit Button -->
+                            <div class="mt-4">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Include Bootstrap JS (optional) -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </div>
+
+        <!-- First Name, Last Name, Father Name, Mother Name -->
+
+
+
+
+    </div>
+
+
+
+
+</div>

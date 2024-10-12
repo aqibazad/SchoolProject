@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .style-0 {
+            border-radius: 10px;
+            background: #fff;
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 20px;
+            flex: 0 0 100%;
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            box-shadow: rgb(128, 128, 128) 0px 0px 1px 0px;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        .page-wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .page-wrapper .content {
+                flex: 1;
+            }
+
+        .card {
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @@media (max-width: 768px) {
+            .form1-column {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .card {
+            margin-left: 59px;
+            width: 90%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper" style="background:#f7f7fa;">
+        <div class="tab-container container-fluid mt-4 ">
+            <div class="col-md-12 col-lg-12 col-xl-12 m-auto">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong class="style-1">Admission Management</strong>
+                    <i class="fas fa-home home-icon"></i>
+                    Admit Bulk Student
+                </div>
+            </div>
+        </div>
+        <div class="tab-container container-fluid mt-4">
+            <div class="col-md-12">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <form id="uploadForm" class="row" enctype="multipart/form-data">
+                        <div class="col-md-6">
+                            <div class="local-forms label">
+                                <label id="label-color">Upload File*</label>
+                                <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" accept=".xlsx" required />
+                            </div>
+                            <br />
+                            <div class="student-submit" style="text-align: center;">
+                                <button type="button" id="uploadButton" class="btn btn-primary">Upload</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="columnMappingSection" style="display: none;">
+                            <div class="local-forms label">
+                                <label id="label-color">File Columns</label>
+                                <select id="fileColumns" class="form-control"></select>
+                            </div>
+                            </br>
+                            <div class="local-forms label">
+                                <label id="label-color">Database Columns</label>
+                                <select id="databaseColumns" class="form-control">
+                                    <option value="FullName">FullName</option>
+                                    <option value="Surname">Surname</option>
+                                    <option value="Gender">Gender</option>
+                                    <option value="Cast">Cast</option>
+                                    <option value="RelationWithParent">RelationWithParent</option>
+                                    <option value="RelationWithGuardian">RelationWithGuardian</option>
+                                    <option value="DateOfBirth">DateOfBirth</option>
+                                    <option value="PlaceOfBirth">PlaceOfBirth</option>
+                                    <option value="ParentName">ParentName</option>
+                                    <option value="ParentCNIC">ParentCNIC</option>
+                                    <option value="ParentEmail">ParentEmail</option>
+                                    <option value="ParentContactNo">ParentContactNo</option>
+                                    <option value="ParentOtherNo">ParentOtherNo</option>
+                                    <option value="ParentOccupation">ParentOccupation</option>
+                                    <option value="ParentIncome">ParentIncome</option>
+                                    <option value="AdmissionDate">AdmissionDate</option>
+                                    <option value="Religion">Religion</option>
+                                    <option value="PreviousSchoolName">PreviousSchoolName</option>
+                                    <option value="PreviousObtainedMarks">PreviousObtainedMarks</option>
+                                    <option value="PreviousTotalMarks">PreviousTotalMarks</option>
+                                    <option value="PreviousClass">PreviousClass</option>
+                                    <option value="PreviousRemarks">PreviousRemarks</option>
+                                    <option value="Address">Address</option>
+                                    <option value="ClassId">ClassId</option>
+                                    <option value="SectionId">SectionId</option>
+                                    <option value="Shift">Shift</option>
+                                    <option value="GuardianName">GuardianName</option>
+                                    <option value="GuardianContactNo">GuardianContactNo</option>
+                                    <option value="GuardianOtherNo">GuardianOtherNo</option>
+                                    <option value="GuardianOccupation">GuardianOccupation</option>
+                                    <option value="GuardianIncome">GuardianIncome</option>
+                                    <option value="GuardianCNIC">GuardianCNIC</option>
+                                    <option value="GuardianEmail">GuardianEmail</option>
+                                    <option value="StudentProfileUrl">StudentProfileUrl</option>
+                                    <option value="GuardianProfileUrl">GuardianProfileUrl</option>
+                                    <option value="SchoolLeavingCertificateUrl">SchoolLeavingCertificateUrl</option>
+                                    <option value="StudentFormBUrl">StudentFormBUrl</option>
+                                    <option value="GuardianCNICFrontUrl">GuardianCNICFrontUrl</option>
+                                    <option value="GuardianCNICBackUrl">GuardianCNICBackUrl</option>
+                                    <option value="OtherDocumentsUrl1">OtherDocumentsUrl1</option>
+                                    <option value="OtherDocumentsTitle1">OtherDocumentsTitle1</option>
+                                    <option value="OtherDocumentsUrl2">OtherDocumentsUrl2</option>
+                                    <option value="OtherDocumentsTitle2">OtherDocumentsTitle2</option>
+                                </select>
+                            </div>
+
+                            </br>
+                            <div class="student-submit" style="text-align: center;">
+                                <button type="button" id="autoMapButton" class="btn btn-info">Auto Map</button>
+                                <button type="button" id="mapButton" class="btn btn-primary">Map</button>
+                                <button type="button" id="saveButton" class="btn btn-success">Save</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let autoMapped = false; // Flag to check if auto-mapping has been done
+
+            $('#uploadButton').click(function () {
+                var formData = new FormData();
+                var file = $('#fileToUpload')[0].files[0];
+                formData.append('file', file);
+                console.log('File data before upload:', file); // Print file data in console
+                $.ajax({
+                    url: '/Admin/AdmissionManagement/UploadFile',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        $('#fileColumns').empty();
+                        data.forEach(function (column) {
+                            $('#fileColumns').append(`<option value="${column}">${column}</option>`);
+                        });
+                        $('#columnMappingSection').show();
+                        autoMapped = false; // Reset auto-mapped flag
+                    },
+                    error: function (err) {
+                        alert('First Choose File');
+                    }
+                });
+            });
+
+            $('#autoMapButton').click(function () {
+                if (autoMapped) {
+                    alert('Mappings already added');
+                    return;
+                }
+
+                var fileColumns = $('#fileColumns option').map(function () { return $(this).val(); }).get();
+                var dbColumns = $('#databaseColumns option').map(function () { return $(this).val(); }).get();
+
+                // Simple similarity function (you can improve this as needed)
+                function similarity(str1, str2) {
+                    return str1.toLowerCase() === str2.toLowerCase() ? 1 : 0; // Case-insensitive comparison
+                }
+
+                var mappings = [];
+                fileColumns.forEach(function (fileCol) {
+                    var bestMatch = dbColumns.reduce(function (best, dbCol) {
+                        return similarity(fileCol, dbCol) > similarity(fileCol, best) ? dbCol : best;
+                    }, dbColumns[0]);
+                    if (similarity(fileCol, bestMatch) > 0) {
+                        mappings.push({ fileColumn: fileCol, dbColumn: bestMatch });
+                    }
+                });
+
+                // Update mappings container with auto-generated mappings
+                mappings.forEach(function (mapping) {
+                    $('#mappingsContainer').append(`
+                            <div>
+                                Mapped: ${mapping.fileColumn} to ${mapping.dbColumn}
+                                <span class="delete-btn" style="color:red!important"><i class="fas fa-trash danger"></i></span>
+                            </div>
+                        `);
+                });
+
+                autoMapped = true; // Set auto-mapped flag to true
+            });
+
+            $('#mapButton').click(function () {
+                var fileColumn = $('#fileColumns').val();
+                var dbColumn = $('#databaseColumns').val();
+                var existingMappings = $('#mappingsContainer > div').map(function () {
+                    return $(this).text().trim();
+                }).get();
+
+                var newMapping = `Mapped: ${fileColumn} to ${dbColumn}`;
+
+                if (existingMappings.includes(newMapping)) {
+                    alert('Mapping already exists');
+                    return;
+                }
+
+                $('#mappingsContainer').append(`
+                                <div>
+                                    ${newMapping}
+                                    <span class="delete-btn" style="color:red!important"><i class="fas fa-trash danger"></i></span>
+                                </div>
+                            `);
+            });
+
+            $('#saveButton').click(function () {
+                var mappings = [];
+                $('#mappingsContainer > div').each(function () {
+                    var mapping = $(this).text().replace('Mapped: ', '').split(' to ');
+                    mappings.push({ fileColumn: mapping[0], dbColumn: mapping[1] });
+                });
+
+                var formData = new FormData();
+                var file = $('#fileToUpload')[0].files[0];
+                formData.append('file', file);
+                formData.append('mappings', JSON.stringify(mappings));
+                console.log('File data before save:', file); // Print file data in console
+                console.log('Mappings before save:', mappings); // Print mappings in console
+
+                $.ajax({
+                    url: '/Admin/AdmissionManagement/SaveFileData',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        alert('Data saved successfully');
+                    },
+                    error: function (xhr) {
+                        var errorMessage = xhr.responseText || 'Error saving data';
+                        alert('Error: ' + errorMessage);
+                    }
+                });
+            });
+
+            $(document).on('click', '.delete-btn', function () {
+                $(this).parent().remove();
+            });
+        });
+    </script>
+
+</body>
+</html>

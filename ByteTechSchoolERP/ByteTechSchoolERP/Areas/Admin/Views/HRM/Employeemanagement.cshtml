@@ -1,0 +1,267 @@
+﻿<div class="page-wrapper" style="background-color: #f7f7fa;">
+    <div class=" tab-container container-fluid mt-3" >
+
+        <div class="style-0" style="max-width:97%; margin-left:20px;">
+            <strong class="style-1">Human Resource</strong> <i class="fas fa-home home-icon"></i>
+            Employee Management
+        </div>
+
+        <div style="justify-content: right!important; ">
+            <a asp-area="Admin" asp-controller="HRM" asp-action="AddEmployee"   class="btn btn-info" style="margin-left: 55px;margin-top: 20px;color: #fff;">
+                <i class="fas fa-user-plus"></i> Add Employee
+            </a>
+        </div>
+        <div class="tab-container container-fluid mt-3">
+            <div class="col-md-12">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <div class="row ">
+                        <div class="col-sm-12">
+                            <form class="row">
+
+
+                                <!-- First Column -->
+                                <div class="col-md-6 " style="margin-top: 12px;">
+                                    <div class="local-forms label">
+                                        <label for="role" id="label-color">Role <span class="text-danger">*</span></label>
+                                        <select name="role" class="form-control" required>
+                                            <option value="">Select Role</option>
+                                            <option value="1">Admin</option>
+                                            <option value="2">Teacher</option>
+                                            <option value="3">Accountant</option>
+                                            <option value="4">Librarian</option>
+                                            <option value="6">Receptionist</option>
+                                            <option value="7">Super Admin</option>
+                                        </select>
+                                    </div>
+                                    </br>
+                                    <div class="student-submit" style="text-align: center;">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-search"></i> Search
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Second Column -->
+                                <div class="col-md-6 local-forms label" style="margin-top: 12px;">
+                                    <div style="position: relative;">
+                                        <label id="label-color"> Search By Keywords<span class="login-danger">*</span></label>
+                                        <input type="text" placeholder="Search by Employee ID,Name" class="form-control">
+                                    </div>
+                                    </br>
+                                    <div class="student-submit" style="text-align: center;">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-search"></i>  Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- New form to be added dynamically -->
+                            <div id="newEmployeeForm"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Card for Small Cards -->
+        <div class="tab-container container-fluid pb-4 mt-3">
+            <div class="col-md-12">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <div class="row ">
+                        <div class="col-sm-12">
+                            <div class="row" style="margin-right: 93px;">
+                                <!-- First Card -->
+                                <div class="col-md-4">
+
+                                    <div class="card small-card" style="width: 100%; ">
+                                        <div class="card-body">
+                                            <!-- First Row -->
+                                            <div class="row mb-3">
+                                                <!-- First Column: Image -->
+                                                <div class="col">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&s" class="img-fluid" alt="Image">
+                                                </div>
+                                                <!-- Second Column: Text -->
+                                                <div class="col">
+                                                    <h4>Hussain</h4>
+                                                    <p>Some text goes here.</p>
+                                                </div>
+                                                <div class="edit-detail-btns">
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-user-plus"></i> Details
+                                                    </a>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Second Row -->
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Second Card -->
+                                <div class="col-md-4">
+                                    <div class="card small-card" style="width: 100%;">
+                                        <div class="card-body">
+                                            <!-- First Row -->
+
+                                            <div class="row mb-3">
+                                                <!-- First Column: Image -->
+                                                <div class="col">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&s" class="img-fluid" alt="Image">
+                                                </div>
+                                                <!-- Second Column: Text -->
+                                                <div class="col">
+                                                    <h4>Ali</h4>
+                                                    <p>Some text goes here.</p>
+                                                </div>
+                                                <div class="edit-detail-btns">
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-user-plus"></i> Details
+                                                    </a>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Second Row -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Third Card -->
+                                <div class="col-md-4">
+                                    <div class="card small-card" style="width: 100%;">
+                                        <div class="card-body">
+                                            <!-- First Row -->
+                                            <div class="row mb-3">
+                                                <!-- First Column: Image -->
+                                                <div class="col">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoVki-W_uujCaTvpNM11TDow7Quak0v3sC-4HKViNS4pdPnqUdydTBFn0TQunXiPzQOUM&usqp=CAU" class="img-fluid" alt="Image">
+                                                </div>
+                                                <!-- Second Column: Text -->
+                                                <div class="col">
+                                                    <h4>Anu</h4>
+                                                    <p>Some text goes here.</p>
+                                                </div>
+                                                <div class="edit-detail-btns">
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-user-plus"></i> Details
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <!-- Second Row -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fourth Card -->
+                                <div class="col-md-4">
+                                    <div class="card small-card" style="width: 100%;">
+                                        <div class="card-body">
+                                            <!-- First Row -->
+                                            <div class="row mb-3">
+                                                <!-- First Column: Image -->
+                                                <div class="col">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoVki-W_uujCaTvpNM11TDow7Quak0v3sC-4HKViNS4pdPnqUdydTBFn0TQunXiPzQOUM&usqp=CAU" class="img-fluid" alt="Image">
+                                                </div>
+                                                <!-- Second Column: Text -->
+                                                <div class="col">
+                                                    <h4>Hanu</h4>
+                                                    <p>Some text goes here.</p>
+                                                </div>
+                                                <div class="edit-detail-btns">
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-user-plus"></i> Details
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <!-- Second Row -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fifth Card -->
+                                <div class="col-md-4">
+                                    <div class="card small-card" style="width: 100%;">
+                                        <div class="card-body">
+                                            <!-- First Row -->
+                                            <div class="row mb-3">
+                                                <!-- First Column: Image -->
+                                                <div class="col">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&s" class="img-fluid" alt="Image">
+                                                </div>
+                                                <!-- Second Column: Text -->
+                                                <div class="col">
+                                                    <h4>Amjad</h4>
+                                                    <p>Some text goes here.</p>
+                                                </div>
+                                                <div class="edit-detail-btns">
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-user-plus"></i> Details
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <!-- Second Row -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Sixth Card -->
+                                <div class="col-md-4">
+                                    <div class="card small-card" style="width: 100%;">
+                                        <div class="card-body">
+                                            <!-- First Row -->
+                                            <div class="row mb-3">
+                                                <!-- First Column: Image -->
+                                                <div class="col">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7nFdX1g_CVR4WyP5LgKOGytP0J8PE53_RQ&s" class="img-fluid" alt="Image">
+                                                </div>
+                                                <!-- Second Column: Text -->
+                                                <div class="col">
+                                                    <h4>sajjid</h4>
+                                                    <p>Some text goes here.</p>
+                                                </div>
+                                                <div class="edit-detail-btns">
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </a>
+
+                                                    <a href="employee-profile.html" id="addEmployeeBtn" class="btn btn-info">
+                                                        <i class="fas fa-user-plus"></i> Details
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <!-- Second Row -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
